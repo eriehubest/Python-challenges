@@ -1,0 +1,5 @@
+open_text = "please put the file directions here"
+#if you want to edit put w, if you want to append put a, if you want to read and edit put r+
+with open(open_text,"w") as whole_file:
+   line = input("type what you wanna add")
+   whole_file.append(line)
