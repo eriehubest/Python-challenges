@@ -1,0 +1,7 @@
+lay = input("PYRAMID LAYER\n")
+
+try:
+    for i in range(int(lay)):
+        print((int(lay)-i)*" "+"A"+"A"*(2*i))
+except:
+    print("Error")
