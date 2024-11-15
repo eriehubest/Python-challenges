@@ -1,0 +1,11 @@
+import sympy
+
+x = sympy.Symbol('x')
+i = sympy.Symbol('i')
+d = []
+num = input("how many variables do you want?")
+k = input("how many brackets do you want to multiply together?")
+for i in k:
+    b = input("input the " + str(i) + "bracket")
+    d.append(b)
+sympy.expand( (x - 1)*(x + i)*(x - i) )
