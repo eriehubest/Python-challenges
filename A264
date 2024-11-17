@@ -1,0 +1,28 @@
+# this is a note: escape velocity = square root(2GM/R)
+
+import math
+
+class Planet:
+    def __init__(self, name, mass, radius):
+        self.name = name
+        self.mass = mass
+        self.radius = radius
+    
+    def escape_velocity(self):
+        G = 6.67430e-11
+        v_e = math.sqrt((2 * G * self.mass) / self.radius)
+        
+        return v_e
+
+def calculate_escape_velocity():
+    name = input("Enter the planet's name: ")
+    mass = float(input("Enter the planet's mass in kilograms (kg): "))
+    radius = float(input("Enter the planet's radius in meters (m): "))
+    
+    planet = Planet(name, mass, radius)
+    escape_velocity = planet.escape_velocity()
+    
+    print(f"The escape velocity for {planet.name} is {escape_velocity:.2f} m/s.")
+
+
+calculate_escape_velocity()
