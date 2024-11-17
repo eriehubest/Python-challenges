@@ -3,9 +3,36 @@ import sympy
 x = sympy.Symbol('x')
 i = sympy.Symbol('i')
 d = []
-num = input("how many variables do you want?")
-k = input("how many brackets do you want to multiply together?")
-for i in k:
-    b = input("input the " + str(i) + "bracket")
+f=[]
+
+def add(var, num):
+    z = sympy.Symbol('var')
+    num = int(num)
+    return(x+num)
+def minus(var, num):
+    z = sympy.Symbol('var')
+    num = int(num)
+    return(x-num)
+
+k = input("how many brackets do you want to multiply together?(at most 3)")
+for i in range(int(k)):
+    b = input("input the (x,y,i,z) of the " + str(i) + " bracket")
+    z = input("(+,-): ")
+    c = input("input the numerical value at the end")
     d.append(b)
-sympy.expand( (x - 1)*(x + i)*(x - i) )
+    d.append(z)
+    d.append(c)
+
+for i in d:
+
+    if i == "+":
+        f.append(add(d[int(d.index(i))-1], d[int(d.index(i))+1]))
+    elif i == "-":
+        f.append(minus(d[int(d.index(i))-1], d[int(d.index(i))+1]))
+
+if int(len(f)) == 3:
+    print(sympy.expand( f[0]*f[1]*f[2] ))
+elif int(len(f)) == 2:
+    print(sympy.expand( f[0]*f[1] ))
+elif int(len(f)) == 1:
+    print(sympy.expand( f[0] ))
