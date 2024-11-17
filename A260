@@ -1,0 +1,64 @@
+class EnigmaMachine:
+    def __init__(self, rotor1, rotor2, reflector):
+        self.rotor1 = rotor1
+        self.rotor2 = rotor2
+        self.reflector = reflector
+        self.alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        
+    def _shift(self, rotor):
+        """Shift the rotor (move to the next position)"""
+        return rotor[1:] + rotor[:1]
+    
+    def _map_char(self, char, rotor, reverse=False):
+        """Map a character through the rotor"""
+        index = self.alphabet.index(char)
+        
+        if reverse:
+
+            return self.alphabet[rotor.index(char)]
+        else:
+            return rotor[index]
+        
+    def _reflect(self, char):
+        """Reflect the character through the reflector"""
+        return self.reflector[self.alphabet.index(char)]
+    
+    def step_rotors(self):
+        """Step the rotors (like the real Enigma machine)"""
+
+        self.rotor2 = self._shift(self.rotor2)
+
+        if self.rotor2[0] == self.alphabet[0]:
+            self.rotor1 = self._shift(self.rotor1)
+
+    def encrypt_character(self, char):
+        """Encrypt a single character with rotor stepping"""
+        self.step_rotors() 
+        char1 = self._map_char(char, self.rotor1)
+        char2 = self._map_char(char1, self.rotor2)
+        reflected = self._reflect(char2)
+        rev_char1 = self._map_char(reflected, self.rotor2, reverse=True)
+        final_char = self._map_char(rev_char1, self.rotor1, reverse=True)
+        
+        return final_char
+
+    def encrypt_message(self, message):
+        """Encrypt a message with the current settings"""
+        encrypted_message = ""
+        for char in message:
+            if char in self.alphabet:
+                encrypted_message += self.encrypt_character(char)
+            else:
+                encrypted_message += char 
+        return encrypted_message
+
+
+rotor1 = ['D', 'M', 'T', 'W', 'S', 'I', 'L', 'R', 'U', 'Y', 'Q', 'N', 'K', 'F', 'E', 'J', 'C', 'A', 'Z', 'B', 'P', 'G', 'X', 'O', 'H', 'V']
+rotor2 = ['H', 'Q', 'Z', 'G', 'P', 'J', 'T', 'M', 'O', 'B', 'L', 'N', 'C',"I", 'F', 'D', 'Y', 'A', 'W', 'V', 'E', 'U', 'S', 'R', 'K', 'X']
+reflector = ['Q', 'Y', 'H', 'O', 'G', 'N', 'E', 'C', 'V', 'P', 'U', 'Z', 'T', 'F', 'D', 'J', 'A', 'X', 'W', 'M', 'K', 'I', 'S', 'R', 'B', 'L']
+
+enigma = EnigmaMachine(rotor1, rotor2, reflector)
+
+message = "HELLO"
+encrypted_message = enigma.encrypt_message(message)
+print(f"Encrypted message: {encrypted_message}")
