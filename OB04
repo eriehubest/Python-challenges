@@ -1,0 +1,63 @@
+#info.txt is the link file to cat information, make sure to download before running the code.
+class anim():
+    def __init__(self):
+        self.open_text = "info.txt"
+        #if you want to edit put w, if you want to append put a, if you want to read and edit put r+
+        self.k=[]
+        self.name = []
+        self.desc = []
+        self.weight = []
+        self.color = []
+        self.life = []
+        self.link = []
+        self.length = []
+
+    def r(self,z):
+        s = z.rstrip("\n")
+
+        return s
+    def get(self):
+        whole_file = open(self.open_text,"r")
+        for i in whole_file:
+            i = self.r(i)
+            self.k.append(i)
+            if self.k.index(i)%12 == 0:
+                self.name.append(i)
+            elif (self.k.index(i)-1)%12 == 0:
+                self.desc.append(i)
+            elif (self.k.index(i) -2)%12 == 0:
+                self.weight.append(i)
+            elif (self.k.index(i) -4)%12 == 0:
+                self.length.append(i)
+            elif (self.k.index(i) -6)%12 == 0:
+                self.color.append(i)
+            elif (self.k.index(i) -8)%12 == 0:
+                self.life.append(i)
+            elif (self.k.index(i) -10)%12 == 0:
+                self.link.append(i)
+
+    def getr(self):
+        self.rname = self.name[self.number]
+        self.rdesc = self.desc[self.number]
+        self.rweight = self.weight[self.number]
+        self.length = self.length[self.number]
+        self.rcolor = self.color[self.number]
+        self.rlife = self.life[self.number]
+        self.rlink = self.link[self.number]
+        
+    def getd(self):
+        print("NAME "+self.rname, "DESCRIPTION "+self.rdesc, self.rweight,self.length, self.rcolor, self.rlife, "LINK "+self.rlink)
+
+    def start(self):
+        self.get()
+        z = 0
+        for i in range(len(self.name)):
+            print(self.name[z]+ " for " + str(z))
+            z += 1
+        self.number = int(input(''))
+        self.getr()
+        self.getd()
+
+
+cat = anim()
+cat.start()
