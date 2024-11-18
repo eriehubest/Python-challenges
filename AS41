@@ -1,0 +1,51 @@
+def check_parity(bits, parity_type):
+    ones_count = bits.count('1')
+    
+    # Check for odd or even parity
+    if parity_type == 'even':
+        if ones_count % 2 == 0:
+            return "Valid"
+        else:
+            return "Invalid"
+    elif parity_type == 'odd':
+        if ones_count % 2 != 0:
+            return "Valid"
+        else:
+            return "Invalid"
+    return "Invalid parity type"
+
+def quiz():
+    questions = [
+        ("10101101", "even"),  # Expected answer: Invalid (5 ones, odd)
+        ("11001011", "odd"),   # Expected answer: Valid (5 ones, odd)
+        ("11101000", "even"),  # Expected answer: Valid (4 ones, even)
+        ("10011100", "odd"),   # Expected answer: Invalid (4 ones, even)
+        ("01110111", "odd"),   # Expected answer: Valid (5 ones, odd)
+        ("00110100", "even"),  # Expected answer: Invalid (3 ones, odd)
+        ("11111000", "even"),  # Expected answer: Invalid (5 ones, odd)
+        ("10111000", "odd")    # Expected answer: Invalid (4 ones, even)
+    ]
+    
+    print("Welcome to the Parity Bit Checker Quiz!\n")
+    correct_answers = 0
+    
+    for idx, (bits, parity_type) in enumerate(questions, 1):
+        print(f"Question {idx}:")
+        print(f"Bits: {bits}")
+        print(f"Parity Type: {parity_type.capitalize()} Parity\n")
+        
+        answer = input("Is the parity valid? (Enter 'Valid' or 'Invalid'): ").strip().lower()
+        
+        correct_answer = check_parity(bits, parity_type)
+        correct_answer = correct_answer.lower()  # Standardize to lower case
+        
+        if answer == correct_answer:
+            print("Correct!\n")
+            correct_answers += 1
+        else:
+            print(f"Incorrect. The correct answer is '{correct_answer.capitalize()}'.\n")
+        
+    print(f"Quiz completed. You got {correct_answers} out of {len(questions)} correct!")
+
+if __name__ == "__main__":
+    quiz()
