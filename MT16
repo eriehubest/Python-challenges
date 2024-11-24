@@ -1,0 +1,4 @@
+in = input()
+z = input()
+for i in range(int(in)):
+  print(str(in) +" + "+ str(z) = str(i + int(z)) 
