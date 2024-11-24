@@ -1,0 +1,8 @@
+num = input("please input the number of items: ")
+total = 0
+for i in range(int(num)):
+  z = input("please input the single price: ")
+  m = input("please input the number of items: ")
+  total += int(z)*int(m)
+
+print(total)
