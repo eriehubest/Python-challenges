@@ -1,0 +1,2 @@
+K = input("type your input number and ill add it by 1:")
+print(int(K) + 1)
