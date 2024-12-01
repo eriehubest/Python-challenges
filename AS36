@@ -1,0 +1,5 @@
+i = input()
+new = []
+new.append(i[0])
+new.append(i[-1])
+print(new)
