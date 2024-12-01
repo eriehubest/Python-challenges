@@ -1,0 +1,20 @@
+def create_checkerboard(n, m):
+    board = []
+
+    for i in range(n):
+        row = []
+        for j in range(m):
+            if (i + j) % 2 == 0:
+                row.append(".")
+            else:
+                row.append("*")
+        board.append(row)
+    
+    return board
+
+n = 5  # Rows
+m = 6  # Columns
+board = create_checkerboard(n, m)
+
+for row in board:
+    print(" ".join(row))
