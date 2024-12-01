@@ -1,0 +1,41 @@
+import random
+
+password_list = [
+    "planet", "monkey", "keyboard", "interface", "system", "radiation", "vault", "codex", "nuclear", "data"
+]
+
+def check_similarity(guess, correct_password):
+    matches = sum([1 for a, b in zip(guess, correct_password) if a == b])
+    return matches
+
+def display_possible_passwords(possible_passwords):
+    print("Possible passwords:")
+    for password in possible_passwords:
+        print(f"- {password}")
+
+def start_game():
+    print("Welcome to the Fallout 4 Hacking Terminal!")
+    print("Guess the correct password.\n")
+    
+    correct_password = random.choice(password_list)
+    possible_passwords = random.sample(password_list, 5)
+    attempts = 0
+    max_attempts = 5
+
+    while attempts < max_attempts:
+        display_possible_passwords(possible_passwords)
+        guess = input("\nEnter your password guess: ").lower().strip()
+
+        if guess == correct_password:
+            print(f"Success! You guessed the correct password: {correct_password}")
+            break
+
+        matches = check_similarity(guess, correct_password)
+        print(f"Incorrect! You have {matches} correct characters.\n")
+
+        attempts += 1
+        if attempts == max_attempts:
+            print(f"Game over! The correct password was: {correct_password}")
+
+if __name__ == "__main__":
+    start_game()
