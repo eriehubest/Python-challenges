@@ -1,0 +1,12 @@
+import random
+k = random.randint(1,100)
+right = False
+while right != True:
+  in = int(input("please input your guess from 1 to 100")
+  if in != k:
+    if in >k:
+      print('it is too big')
+    elif in < k:
+      print("it is too small")
+  elif in == k:
+    right = True
