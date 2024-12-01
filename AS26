@@ -1,0 +1,14 @@
+def calculate_average_word_length(file_path):
+    with open(file_path, 'r') as file:
+        text = file.read()
+        
+    words = text.split()
+    total_length = sum(len(word) for word in words)
+    average_length = total_length / len(words) if words else 0
+    
+    return average_length
+
+
+file_path = 'example.txt'  # Replace with your file path
+average_length = calculate_average_word_length(file_path)
+print(f"Average word length: {average_length:.2f}")
