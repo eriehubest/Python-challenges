@@ -1,0 +1,58 @@
+import random
+import os
+
+
+class black_j:
+    def __init__(self,players,cards):
+        self.num = players
+        self.cards = cards
+        self.winner = []
+        self.players = {
+            1 : 0,
+            2 : 0,
+            3 : 0,
+            4 : 0
+        }
+
+    def clear(self):
+        os.system('cls')
+
+    def run(self):
+        for i in range(self.num):
+            self.clear()
+            self.players[i+1] += random.choice(self.cards)
+            self.players[i+1] += random.choice(self.cards)
+            print('this is player ' + str(i+1) + ' \'s turn')
+            print(self.players[i+1])
+            p = input("do you want to continue drawing cards?(y/n)")
+            while p == 'y':
+                if p == 'y':
+                    self.clear()
+                    print('this is player ' + str(i+1) + ' \'s turn')
+                    self.players[i+1] += random.choice(self.cards)
+                    print(self.players[i+1])
+                    if self.players[i+1] > 21:
+                        print('player ' + str(i+1) + ' died')
+                        self.players[i+1] = 0
+                        p = 'n'
+                        k = input('press enter to continue')
+                    else:
+                        p = input("do you want to continue drawing cards?(y/n)")
+            
+        
+        
+        z = list(self.players.values())
+        x = list(self.players.keys())
+        for i in self.players:
+            print('player ' + str(i) +  ' is ' + str(z[i-1]))
+        m = max(z)
+        print('winner is player ' + str(x[z.index(m)]) + ' with ' + str(m) + ' points')
+
+
+
+
+
+
+b = black_j(4,[1,2,3,4,5,6,7,8,9,10,10,10,10])
+
+b.run()
