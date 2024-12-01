@@ -1,0 +1,19 @@
+number = int(input("Enter a number: "))
+result = 0
+
+if number > 0:
+    print("You entered a positive number.")
+    result = number * 2
+elif number < 0:
+    print("You entered a negative number.")
+    result = number * -1
+else:
+    print("You entered zero.")
+    result = 0
+
+print(f"The result of your number is: {result}")
+
+for i in range(5):
+    print(f"Iteration {i+1}: {number} times {i+1} = {number * (i+1)}")
+    
+print("Thank you for participating in the demo!")
