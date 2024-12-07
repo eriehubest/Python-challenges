@@ -1,6 +1,8 @@
 import random
 import os
 
+def clear():
+    os.system('clear')
 
 class black_j:
     def __init__(self,players,cards):
@@ -15,13 +17,17 @@ class black_j:
         }
 
     def clear(self):
-        os.system('cls')
+        os.system('clear')
 
     def run(self):
         for i in range(self.num):
             self.clear()
-            self.players[i+1] += random.choice(self.cards)
-            self.players[i+1] += random.choice(self.cards)
+            z = random.choice(self.cards)
+            z2 = random.choice(self.cards)
+            self.players[i+1] += z
+            self.players[i+1] += z2
+            self.cards.remove(z)
+            self.cards.remove(z2)
             print('this is player ' + str(i+1) + ' \'s turn')
             print(self.players[i+1])
             p = input("do you want to continue drawing cards?(y/n)")
@@ -29,7 +35,9 @@ class black_j:
                 if p == 'y':
                     self.clear()
                     print('this is player ' + str(i+1) + ' \'s turn')
-                    self.players[i+1] += random.choice(self.cards)
+                    z3 = random.choice(self.cards)
+                    self.players[i+1] += z3
+                    self.cards.remove(z3)
                     print(self.players[i+1])
                     if self.players[i+1] > 21:
                         print('player ' + str(i+1) + ' died')
@@ -43,16 +51,34 @@ class black_j:
         
         z = list(self.players.values())
         x = list(self.players.keys())
+        k = 0
+        self.clear()
         for i in self.players:
-            print('player ' + str(i) +  ' is ' + str(z[i-1]))
+            if k < self.num:
+                k += 1
+                print('player ' + str(i) +  ' is ' + str(z[i-1]))
+            else:
+                pass
+            
+
         m = max(z)
-        print('winner is player ' + str(x[z.index(m)]) + ' with ' + str(m) + ' points')
+        
+        if str(m) == "21":
+            print('you are goat')
+            print('winner is player ' + str(x[z.index(m)]) + ' with ' + str(m) + ' points')
+        elif str(m) != "21" and str(m) != "0":
+            print('winner is player ' + str(x[z.index(m)]) + ' with ' + str(m) + ' points')
+        elif str(m) == "0":
+            print('no winner yall die')
+
+clear()
 
 
 
-
-
-
-b = black_j(4,[1,2,3,4,5,6,7,8,9,10,10,10,10])
-
+s = input('how many players do you want? (max 4) \n')
+clear()
+try:
+    b = black_j(int(s),[1,2,3,4,5,6,7,8,9,10,10,10,10,1,2,3,4,5,6,7,8,9,10,10,10,10,1,2,3,4,5,6,7,8,9,10,10,10,10,1,2,3,4,5,6,7,8,9,10,10,10,10])
+except:
+    print('enter number')
 b.run()
