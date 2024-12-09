@@ -1,0 +1,357 @@
+def ohhhh():
+
+  def clear():
+    os.system('clear')
+
+  def sleep(x):
+    time.sleep(x)
+
+  set = [
+    'force', 'wound', 'brave', 'cable', 'panic', 'study', 'faith', 'equal',
+    'grade', 'award', 'bully', 'voice', 'drive', 'title'
+  ]
+
+  ian = '''
+     _______           
+    |           <--- this is ian it is not offensive
+    |     O
+    |    /|\\
+    |   / | \\
+    |    / \\
+    |   /   \\
+    |  
+    -----------
+  '''
+
+  ian2 = '''
+     _______           
+    |           <--- this is kerry it is not offensive
+    |     O
+    |    /|\\
+    |   / | \\
+    |    / \\
+    |   
+    |  
+    -----------
+  '''
+  ian3 = '''
+     _______           
+    |           <--- this is kerry it is not offensive
+    |     O
+    |    /|\\
+    |   / | \\
+    |    
+    |   
+    |  
+    -----------
+  '''
+  ian4 = '''
+     _______           
+    |           <--- this is kerry it is not offensive
+    |     O
+    |    /|\\
+    |  
+    |    
+    |   
+    |  
+    -----------
+  '''
+  ian4 = '''
+     _______           
+    |           <--- this is kerry it is not offensive
+    |     
+    |     o      <What are you doing I am dying
+    |            save me!!!!
+    |   
+    |   
+    |  
+    -----------
+  '''
+  ian5 = '''
+     _______           
+    |      |     <--- this is kerry it is not offensive
+    |      |
+    |      o       <QUICK I AM STILL LIVING!!!
+    |               save me!!!!
+    |    
+    |   
+    |  
+    -----------
+  '''
+  ian6 = fg.red + '''
+     _______           
+    |           <--- this is kerry it is not offensive
+    |     O
+    |    /|\\   <oops I died
+    |   / | \\   
+    |    / \\
+    |   /   \\
+    |  
+    -----------
+  '''
+
+  choice = random.choice(set)
+
+  def hints():
+    if choice == 'force':
+      print('Ian _____ Bob to do his homework')
+    elif choice == 'wound':
+      print('Ian throw a knife at bob and there is a _____ on bob\'s skin')
+    elif choice == 'brave':
+      print('Ian is _____er than bob because he dare to eat cockroaches')
+    elif choice == 'cable':
+      print('you plug the _____ and charged your phone')
+    elif choice == 'panic':
+      print(
+        'Ian _____ed when his mom came back because he didn\'t do his homework'
+      )
+    elif choice == 'study':
+      print('Ian _____ even after school finished')
+    elif choice == 'faith':
+      print('it is your _____ that you need a hint')
+    elif choice == 'equal':
+      print('men and women should be _____')
+    elif choice == 'grade':
+      print('Ian is jealous of eric because he have better grades')
+    elif choice == 'award':
+      print('Ian should get a _____ for being here')
+    else:
+      print(
+        'so sad the word you get I didn\'t have time to make a hint for yet')
+
+  def start():
+    clear()
+    ns = []
+    nns = ['_ ', '_ ', '_ ', '_ ', '_']
+
+    for i in choice:
+      ns.append(i)
+    a = len(choice)
+    #firstone
+    print('There are ' + fg.green + str(a) + fg.white +
+          ' words all together in this answer')
+    print(fg.blue + ian)
+    myans = input(
+      fg.li_blue +
+      'now you have to try to guess a letter kerry is going to be happy: ')
+    if myans == choice:
+      print(fg.green + 'WTF YOU GOT IT YOU WIN')
+      quit()
+    elif myans != choice:
+      for i in myans:
+        if i == ns[0]:
+          nns[0] = i
+        elif i == ns[1]:
+          nns[1] = i
+        elif i == ns[2]:
+          nns[2] = i
+        elif i == ns[3]:
+          nns[3] = i
+        elif i == ns[4]:
+          nns[4] = i
+      print(' '.join(nns) + '\nyou have these correct')
+    sleep(6)
+    clear()
+    #second one
+    print(' '.join(nns) + '\nyou have these correct')
+    print('There are ' + fg.green + str(a) + fg.white +
+          ' words all together in this answer')
+    print(ian2)
+    myans = input(
+      fg.li_blue +
+      'now you have to try to guess a letter AGAIN or kerry is going to be happy: '
+    )
+    if myans == choice:
+      print(fg.green + 'WTF YOU GOT IT YOU WIN')
+      quit()
+    elif myans != choice:
+      for i in myans:
+        if i == ns[0]:
+          nns[0] = i
+        elif i == ns[1]:
+          nns[1] = i
+        elif i == ns[2]:
+          nns[2] = i
+        elif i == ns[3]:
+          nns[3] = i
+        elif i == ns[4]:
+          nns[4] = i
+      print(' '.join(nns) + '\nyou have these correct')
+
+      sleep(5)
+      clear()
+      #third one
+      print(' '.join(nns) + '\nyou have these correct')
+    print('There are ' + fg.green + str(a) + fg.white +
+          ' words all together in this answer')
+    print(ian3)
+    myans = input(
+      fg.li_blue +
+      'now you have to try to guess a letter AGAIN AGAIN or kerry is going to be happy: '
+    )
+    if myans == choice:
+      print(fg.green + 'WTF YOU GOT finally' + fg.green +
+            '(really, really, quiet)' + ' IT YOU WIN')
+      quit()
+    elif myans != choice:
+      for i in myans:
+        if i == ns[0]:
+          nns[0] = i
+        elif i == ns[1]:
+          nns[1] = i
+        elif i == ns[2]:
+          nns[2] = i
+        elif i == ns[3]:
+          nns[3] = i
+        elif i == ns[4]:
+          nns[4] = i
+      print(' '.join(nns) + '\nyou have these correct')
+      sleep(5)
+      clear()
+      #fourth one
+      print(' '.join(nns) + '\nyou have these correct')
+    print('There are ' + fg.green + str(a) + fg.white +
+          ' words all together in this answer')
+    print(ian4)
+    myans = input(
+      fg.li_blue +
+      'now you have to try to guess a letter AGAIN AGAIN or kerry is going to be happy: '
+    )
+    if myans == choice:
+      print(fg.green + 'WTF YOU GOT finally' + fg.green +
+            '(really, really, quiet)' + ' IT YOU WIN')
+      quit()
+    elif myans != choice:
+      for i in myans:
+        if i == ns[0]:
+          nns[0] = i
+        elif i == ns[1]:
+          nns[1] = i
+        elif i == ns[2]:
+          nns[2] = i
+        elif i == ns[3]:
+          nns[3] = i
+        elif i == ns[4]:
+          nns[4] = i
+
+      print(' '.join(nns) + '\nyou have these correct')
+    sleep(4)
+    clear()
+    #fifth ones
+    print(' '.join(nns) + '\nyou have these correct')
+    print('There are ' + fg.green + str(a) + fg.white +
+          ' words all together in this answer')
+    print(ian5)
+    hint = input('do you want a hint?(Y or N) ')
+    if hint == 'Y':
+      hints()
+    myans = input(
+      fg.li_blue +
+      'now you have to try to guess a letter AGAIN AGAIN or kerry is going to be happy: '
+    )
+    if myans == choice:
+      print(fg.green + 'WTF YOU GOT finally' + fg.green +
+            '(really, really, quiet)' + ' IT YOU WIN')
+      quit()
+    elif myans != choice:
+      for i in myans:
+        if i == ns[0]:
+          nns[0] = i
+        elif i == ns[1]:
+          nns[1] = i
+        elif i == ns[2]:
+          nns[2] = i
+        elif i == ns[3]:
+          nns[3] = i
+        elif i == ns[4]:
+          nns[4] = i
+
+      print(' '.join(nns) + '\nyou have these correct')
+    sleep(4)
+    clear()
+    #sixth one
+    print(' '.join(nns) + '\nyou have these correct')
+    print(fg.red + 'BUT SO SAD YOU DIDN"T GET IT RIGHT THE REAL ANSER IS')
+    sleep(0.5)
+    print('.')
+    sleep(0.5)
+    print('.')
+    sleep(0.5)
+    print('.')
+    sleep(0.5)
+    print('.')
+    print(fg.red + 'THE REAL ANSER IS ' + choice)
+    print(ian6)
+
+  #starting sentence
+  print(
+    fg.blue +
+    'welcome to the game of hangman\nthe rules are simple, you guess \nthe word i am thinking.'
+  )
+
+  sleep(5)
+  clear()
+
+  print(
+    fg.green +
+    'I will be showing how many lifes you have left and there will be showing what words you have guessed.'
+  )
+  print(fg.red + 'have fun')
+
+  sleep(5)
+  clear()
+
+  h = input('type 1 to start the best game: ')
+  if h == '1':
+    start()
+  else:
+    print(fg.red + 'sooooooooooooooo sad')
+
+  def last():
+    sleep(4)
+    clear()
+    sleep(3)
+    clear()
+    print('THIS VIDEO IS SPONSERED BY ERIC . COM GO AND DONATE THERE ')
+    sleep(2)
+    clear()
+    sleep(0.1)
+    print('what are you waiting for?')
+    sleep(2)
+    clear()
+    print('lEAVE')
+    sleep(2)
+    clear()
+    print('now')
+    sleep(2)
+    clear()
+
+    print('OK I WILL TELL YOU!')
+    sleep(2)
+    clear()
+
+    print('Eric')
+    sleep(0.1)
+    print('is')
+    sleep(0.1)
+    print('better')
+    sleep(0.1)
+    print('than')
+    sleep(0.1)
+    print('KERRY')
+    this = 'Let\'s GOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO'
+    l = [
+      fg.blue, fg.green, fg.black, fg.grey, fg.white, fg.red, fg.li_green,
+      fg.yellow, fg.magenta, fg.da_cyan
+    ]
+
+    for i in this:
+      sleep(0.01)
+
+      a = random.choice(l)
+
+      print(a + i)
+
+  last()
+
+ohhh()
