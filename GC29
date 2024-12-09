@@ -1,0 +1,25 @@
+import random
+
+comments = [
+    "did a great job!",
+    "needs to work harder.",
+    "showed improvement this week.",
+    "needs to participate more in class.",
+    "was very focused today.",
+    "struggled with the task, but kept trying.",
+    "worked well with the team.",
+    "needs to ask more questions when unsure.",
+    "completed all assignments on time.",
+    "could benefit from reviewing the material again."
+]
+
+names = []
+a = input('How many students are there? ')
+
+for i in range(int(a)):
+    k = input('What is the student\'s name? ')
+    names.append(k)
+
+# Now we generate and print a comment for each student
+for name in names:
+    print(f"{name} {random.choice(comments)}")
