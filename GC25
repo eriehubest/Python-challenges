@@ -1,0 +1,39 @@
+import random
+
+david = str(random.randint(1,1000))
+tsubasa = str(random.randint(1,1000))
+print("""
+VENDER
+ ____
+|0000|
+|0000|
+|____|
+|____|
+""")
+print('please select your item to purhcase:')
+print(f'coke(1) : ${david}\nsprite(2) : ${tsubasa}')
+
+a = input('')
+if a == '1':
+    print("""
+    VENDER
+     ____
+    |0000|
+    |000 |
+    |____|
+    |___0|
+    """)
+    print('you got coke')
+elif a == '2':
+    print("""
+    VENDER
+     ____
+    |0000|
+    |000 |
+    |____|
+    |___0|
+    """)
+    print('you got sprite')
+
+
+
