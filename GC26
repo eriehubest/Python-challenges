@@ -1,0 +1,14 @@
+import random
+
+list = ['a','b','d','c','E','f','G','H','I','J','k','L','M','N','o','p','w','y','x','z','!','@','3','5','&','*']
+
+print('This is a drunkometer')
+
+a = random.choice(list) + random.choice(list) + random.choice(list) + random.choice(list) + random.choice(list) + random.choice(list) + random.choice(list) + random.choice(list) 
+print(a)
+print('you have to type the same thing to access the factory')
+z = input('')
+if z == a:
+  print('you passed')
+else:
+  print('you failed')
